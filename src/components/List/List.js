@@ -1,4 +1,5 @@
 import styles from "./List.module.scss";
+import Column from "../Column/Column";
 
 const List = () => {
   return (
@@ -12,15 +13,9 @@ const List = () => {
         Interesting things I want to check out
       </p>
       <section className={styles.columns}>
-        <article>
-          <h2>HTML</h2>
-        </article>
-        <article>
-          <h2>CSS</h2>
-        </article>
-        <article>
-          <h2>JavaScript</h2>
-        </article>
+        <Column title="HTML" />
+        <Column title="CSS + SCSS" />
+        <Column title="JavaScript" />
       </section>
     </div>
   );
