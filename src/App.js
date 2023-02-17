@@ -1,5 +1,13 @@
-const App = () => {
-  return (<h1>Hello World</h1>);
-}
+import Hero from "./components/Hero/Hero";
+import SearchForm from "./components/SearchForm/SearchForm";
 
-export default App
+const App = () => {
+  return (
+    <div>
+      <Hero />
+      <SearchForm />
+    </div>
+  );
+};
+
+export default App;
