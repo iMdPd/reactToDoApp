@@ -38,5 +38,6 @@ export const initialState = {
       title: "CSS + SCSS",
     },
   ],
-};
 
+  searchInput: [""],
+};
