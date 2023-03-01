@@ -39,5 +39,5 @@ export const initialState = {
     },
   ],
 
-  searchInput: [""],
+  searchInput: "",
 };
