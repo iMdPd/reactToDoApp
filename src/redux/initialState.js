@@ -16,6 +16,7 @@ export const initialState = {
       icon: "code",
     },
   ],
+
   cards: [
     { id: 1, columnId: 1, title: "Eloquent JavaScript." },
     {
@@ -38,3 +39,4 @@ export const initialState = {
     },
   ],
 };
+
