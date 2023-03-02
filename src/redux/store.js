@@ -7,8 +7,11 @@ export const selectFilteredCards = ({ cards, searchInput }, columnId) =>
   cards.filter(
     (card) => card.columnId === columnId && strContains(card.title, searchInput)
   );
-
 export const selectAllColumns = (state) => state.columns;
+
+export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
+export const addCard = (payload) => ({ type: "ADD_CARD", payload });
+export const updateColumns = (payload) => ({ type: "UPDATE_COLUMNS", payload });
 
 const reducer = (state, action) => {
   switch (action.type) {
