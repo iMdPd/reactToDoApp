@@ -4,10 +4,10 @@ import { List } from "../List/List";
 
 export const Home = () => {
   return (
-    <div>
+    <>
       <Hero />
       <SearchForm />
       <List />
-    </div>
+    </>
   );
 };
