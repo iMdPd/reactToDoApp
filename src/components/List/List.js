@@ -4,7 +4,7 @@ import ColumnForm from "./../ColumnForm/ColumnForm";
 import { useSelector } from "react-redux";
 import { selectAllColumns } from "../../redux/store";
 
-const List = () => {
+export const List = () => {
   const columns = useSelector(selectAllColumns);
 
   return (
@@ -26,5 +26,3 @@ const List = () => {
     </div>
   );
 };
-
-export default List;

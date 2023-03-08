@@ -5,7 +5,7 @@ import { updateColumns } from "../../redux/store";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 
-const SearchForm = () => {
+export const SearchForm = () => {
   const [title, setTitle] = useState("");
 
   const dispatch = useDispatch();
@@ -29,4 +29,3 @@ const SearchForm = () => {
     </form>
   );
 };
-export default SearchForm;

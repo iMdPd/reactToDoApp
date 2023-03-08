@@ -1,7 +1,7 @@
 import styles from "./Hero.module.scss";
 import { PageTitle } from "../PageTitle/PageTitle";
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <div className={styles.hero}>
       <PageTitle style={styles.title}>My first React App</PageTitle>
@@ -11,4 +11,3 @@ const Hero = () => {
     </div>
   );
 };
-export default Hero;
