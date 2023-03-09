@@ -5,7 +5,7 @@ import { addColumn } from "../../redux/store";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 
-const ColumnForm = () => {
+const ColumnForm = ({ listId }) => {
   const [title, setTitle] = useState("");
   const [icon, setIcon] = useState("");
 
@@ -13,7 +13,7 @@ const ColumnForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addColumn({ title, icon }));
+    dispatch(addColumn({ title, icon, listId }));
     setTitle("");
     setIcon("");
   };
