@@ -18,6 +18,12 @@ export const initialState = {
       title: "Framework",
       icon: "code",
     },
+    {
+      id: 4,
+      listId: 2,
+      title: "Test",
+      icon: "hashtag",
+    },
   ],
 
   cards: [
