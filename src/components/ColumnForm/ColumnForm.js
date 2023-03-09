@@ -5,7 +5,7 @@ import { addColumn } from "../../redux/store";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 
-const ColumnForm = ({ listId }) => {
+export const ColumnForm = ({ listId }) => {
   const [title, setTitle] = useState("");
   const [icon, setIcon] = useState("");
 
@@ -46,5 +46,3 @@ const ColumnForm = ({ listId }) => {
     </form>
   );
 };
-
-export default ColumnForm;
