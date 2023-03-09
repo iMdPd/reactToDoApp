@@ -10,9 +10,9 @@ export const selectFilteredCards = ({ cards, searchInput }, columnId) =>
 export const selectAllColumns = (state) => state.columns;
 export const selectListById = ({ lists }, listId) =>
   lists.find((list) => list.id /* === listId */);
-
 export const selectColumnsByList = ({ columns }, list) =>
   columns.filter(({ listId }) => listId === list.id);
+export const selectAllLists = (state) => state.lists;
 
 export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
 export const addCard = (payload) => ({ type: "ADD_CARD", payload });
