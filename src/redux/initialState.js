@@ -2,16 +2,19 @@ export const initialState = {
   columns: [
     {
       id: 1,
+      listId: 1,
       title: "Books",
       icon: "book",
     },
     {
       id: 2,
+      listId: 1,
       title: "Movies",
       icon: "film",
     },
     {
       id: 3,
+      listId: 1,
       title: "Framework",
       icon: "code",
     },
