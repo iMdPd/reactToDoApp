@@ -1,6 +1,6 @@
 import styles from "./TextInput.module.scss";
 
-const TextInput = ({ value, onChange, placeholder }) => {
+export const TextInput = ({ value, onChange, placeholder }) => {
   return (
     <input
       type="text"
@@ -11,5 +11,3 @@ const TextInput = ({ value, onChange, placeholder }) => {
     />
   );
 };
-
-export default TextInput;
