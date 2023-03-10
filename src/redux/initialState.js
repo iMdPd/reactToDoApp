@@ -31,7 +31,7 @@ export const initialState = {
       id: "1",
       columnId: "1",
       title: "Eloquent JavaScript.",
-      isFavourite: false,
+      isFavourite: true,
     },
     {
       id: "2",
