@@ -1,5 +1,5 @@
 import { initialState } from "./initialState";
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 import shortid from "shortid";
 import { strContains } from "../utils/strContains";
 
@@ -73,16 +73,14 @@ const searchInputReducer = (statePart = "", action) => {
   }
 };
 
-const reducer = (state, action) => {
-  const newState = {
-    columns: columnsReducer(state.columns, action),
-    cards: cardsReducer(state.cards, action),
-    lists: listsReducer(state.lists, action),
-    searchInput: searchInputReducer(state.searchInput, action),
-  };
-
-  return newState;
+const subReducers = {
+  columns: columnsReducer,
+  cards: cardsReducer,
+  lists: listsReducer,
+  searchInput: searchInputReducer,
 };
+
+const reducer = combineReducers(subReducers);
 
 const store = createStore(
   reducer,
