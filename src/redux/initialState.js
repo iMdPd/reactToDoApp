@@ -27,24 +27,36 @@ export const initialState = {
   ],
 
   cards: [
-    { id: "1", columnId: "1", title: "Eloquent JavaScript." },
+    {
+      id: "1",
+      columnId: "1",
+      title: "Eloquent JavaScript.",
+      isFavourite: false,
+    },
     {
       id: "2",
       columnId: "1",
       title: "Interaktywne strony WWW dla każdego.",
+      isFavourite: false,
     },
-
-    { id: "3", columnId: "2", title: "React - The complete Guide" },
+    {
+      id: "3",
+      columnId: "2",
+      title: "React - The complete Guide",
+      isFavourite: false,
+    },
     {
       id: "4",
       columnId: "2",
       title: "The complete JS course",
+      isFavourite: false,
     },
-    { id: "5", columnId: "3", title: "HTML" },
+    { id: "5", columnId: "3", title: "HTML", isFavourite: false },
     {
       id: "6",
       columnId: "3",
       title: "CSS + SCSS",
+      isFavourite: false,
     },
   ],
 
