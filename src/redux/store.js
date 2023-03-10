@@ -53,7 +53,7 @@ const cardsReducer = (statePart = [], action) => {
   }
 };
 
-const listReducer = (statePart = [], action) => {
+const listsReducer = (statePart = [], action) => {
   switch (action.type) {
     case "ADD_LIST":
       return [...statePart, { ...action.payload, id: shortid() }];
@@ -63,7 +63,7 @@ const listReducer = (statePart = [], action) => {
   }
 };
 
-const searchStringReducer = (statePart = "", action) => {
+const searchInputReducer = (statePart = "", action) => {
   switch (action.type) {
     case "UPDATE_COLUMNS":
       return action.payload.title.toLowerCase();
@@ -74,42 +74,53 @@ const searchStringReducer = (statePart = "", action) => {
 };
 
 const reducer = (state, action) => {
-  switch (action.type) {
-    case "ADD_COLUMN":
-      return {
-        ...state,
-        columns: [...state.columns, { ...action.payload, id: shortid() }],
-      };
+  const newState = {
+    columns: columnsReducer(state.columns, action),
+    cards: cardsReducer(state.cards, action),
+    lists: listsReducer(state.lists, action),
+    searchInput: searchInputReducer(state.searchInput, action),
+  };
 
-    case "ADD_CARD":
-      return {
-        ...state,
-        cards: [...state.cards, { ...action.payload, id: shortid() }],
-      };
-
-    case "ADD_LIST":
-      return {
-        ...state,
-        lists: [...state.lists, { ...action.payload, id: shortid() }],
-      };
-
-    case "UPDATE_COLUMNS":
-      return { ...state, searchInput: action.payload.title.toLowerCase() };
-
-    case "TOGGLE_CARD_FAVOURITE":
-      return {
-        ...state,
-        cards: state.cards.map((card) =>
-          card.id === action.payload
-            ? { ...card, isFavourite: !card.isFavourite }
-            : card
-        ),
-      };
-
-    default:
-      return state;
-  }
+  return newState;
 };
+
+// const reducer = (state, action) => {
+//   switch (action.type) {
+//     case "ADD_COLUMN":
+//       return {
+//         ...state,
+//         columns: [...state.columns, { ...action.payload, id: shortid() }],
+//       };
+
+//     case "ADD_CARD":
+//       return {
+//         ...state,
+//         cards: [...state.cards, { ...action.payload, id: shortid() }],
+//       };
+
+//     case "ADD_LIST":
+//       return {
+//         ...state,
+//         lists: [...state.lists, { ...action.payload, id: shortid() }],
+//       };
+
+//     case "UPDATE_COLUMNS":
+//       return { ...state, searchInput: action.payload.title.toLowerCase() };
+
+//     case "TOGGLE_CARD_FAVOURITE":
+//       return {
+//         ...state,
+//         cards: state.cards.map((card) =>
+//           card.id === action.payload
+//             ? { ...card, isFavourite: !card.isFavourite }
+//             : card
+//         ),
+//       };
+
+//     default:
+//       return state;
+//   }
+// };
 
 const store = createStore(
   reducer,
