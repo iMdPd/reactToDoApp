@@ -6,28 +6,32 @@ import { cardsReducer } from "./cardsRedux";
 import { listsReducer } from "./listsRedux";
 import { searchInputReducer } from "./searchInputRedux";
 
+export const selectAllColumns = (state) => state.columns;
+export const selectColumnsByList = ({ columns }, id) =>
+  columns.filter(({ listId }) => listId === id);
+
 export const selectFilteredCards = ({ cards, searchInput }, columnId) =>
   cards.filter(
     (card) => card.columnId === columnId && strContains(card.title, searchInput)
   );
-export const selectAllColumns = (state) => state.columns;
-export const selectListById = ({ lists }, listId) =>
-  lists.find((list) => list.id === listId);
-export const selectColumnsByList = ({ columns }, id) =>
-  columns.filter(({ listId }) => listId === id);
-export const selectAllLists = (state) => state.lists;
-export const selectSearchInputValue = (state) => state.searchInput;
 export const selectFavouriteCard = ({ cards }) =>
   cards.filter(({ isFavourite }) => isFavourite === true);
 
+export const selectAllLists = (state) => state.lists;
+export const selectListById = ({ lists }, listId) =>
+  lists.find((list) => list.id === listId);
+
+export const selectSearchInputValue = (state) => state.searchInput;
+
 export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
 export const addCard = (payload) => ({ type: "ADD_CARD", payload });
+export const removeCard = (payload) => ({ type: "REMOVE_CARD", payload });
 export const addList = (payload) => ({ type: "ADD_LIST", payload });
-export const updateColumns = (payload) => ({ type: "UPDATE_COLUMNS", payload });
 export const toggleCardFavourite = (payload) => ({
   type: "TOGGLE_CARD_FAVOURITE",
   payload,
 });
+export const updateColumns = (payload) => ({ type: "UPDATE_COLUMNS", payload });
 
 const subReducers = {
   columns: columnsReducer,
