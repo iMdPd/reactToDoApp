@@ -2,8 +2,7 @@ import styles from "./Card.module.scss";
 import { FavouriteButton } from "../FavouriteButton/FavouriteButton";
 import { DeleteButton } from "../DeleteButton/DeleteButton";
 import { useDispatch } from "react-redux";
-import { toggleCardFavourite } from "../../redux/store";
-import { removeCard } from "../../redux/store";
+import { removeCard, toggleCardFavourite } from "../../redux/cardsRedux";
 
 const Card = ({ title, isFavourite, id }) => {
   const dispatch = useDispatch();
