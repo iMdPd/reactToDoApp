@@ -5,13 +5,7 @@ import { cardsReducer } from "./cardsRedux";
 import { listsReducer } from "./listsRedux";
 import { searchInputReducer } from "./searchInputRedux";
 
-export const selectAllColumns = (state) => state.columns;
-export const selectColumnsByList = ({ columns }, id) =>
-  columns.filter(({ listId }) => listId === id);
-
 export const selectSearchInputValue = (state) => state.searchInput;
-
-export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
 
 export const updateColumns = (payload) => ({ type: "UPDATE_COLUMNS", payload });
 
